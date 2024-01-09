@@ -120,6 +120,7 @@ class StockTradingEnv(gym.Env):
                     print(f"| Actions: {actions[index]}")
                     #sell_num_shares = min(self.stocks[index], -actions[index]) # HSG
                     #sell_num_shares = min(self.stocks[index], abs(actions[index]))
+                    sell_num_shares = 1 #HSG
                     self.stocks[index] -= sell_num_shares
                     self.amount += (
                         price[index] * sell_num_shares * (1 - self.sell_cost_pct)
