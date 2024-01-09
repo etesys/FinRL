@@ -118,7 +118,7 @@ class StockTradingEnv(gym.Env):
                 if price[index] > 0:  # Sell only if current asset is > 0
                     print(f"| Stocks: {self.stocks[index]}")
                     print(f"| Actions: {actions[index]}")
-                    sell_num_shares = min(self.stocks[index], -actions[index]) # HSG
+                    #sell_num_shares = min(self.stocks[index], -actions[index]) # HSG
                     #sell_num_shares = min(self.stocks[index], abs(actions[index]))
                     self.stocks[index] -= sell_num_shares
                     self.amount += (
