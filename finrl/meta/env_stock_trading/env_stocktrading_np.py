@@ -130,7 +130,7 @@ class StockTradingEnv(gym.Env):
                 if (
                     price[index] > 0
                 ):  # Buy only if the price is > 0 (no missing data in this particular date)
-                    buy_num_shares = min((self.amount // price[index], actions[index]).all())
+                    buy_num_shares = min((self.amount // price[index]).all(), (actions[index]).all())
                     self.stocks[index] += buy_num_shares
                     self.amount -= (
                         price[index] * buy_num_shares * (1 + self.buy_cost_pct)
