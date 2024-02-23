@@ -116,8 +116,8 @@ class StockTradingEnv(gym.Env):
             min_action = int(self.max_stock * self.min_stock_rate)  # stock_cd
             for index in np.where(actions < -min_action)[0]:  # sell_index:
                 if price[index] > 0:  # Sell only if current asset is > 0
-                    print(f"| Stock {index}: {self.stocks[index]}") # HSG
-                    print(f"| Action {index}: {actions[index]}")    # HSG
+                    #print(f"| Stock {index}: {self.stocks[index]}") # HSG
+                    #print(f"| Action {index}: {actions[index]}")    # HSG
                     #sell_num_shares = min(self.stocks[index], -actions[index]) # HSG
                     sell_num_shares = min((self.stocks[index]).all(), (-actions[index]).all())
                     self.stocks[index] -= sell_num_shares
